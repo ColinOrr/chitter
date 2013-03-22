@@ -16,3 +16,10 @@ When deciding on our list of requirements and our architecture we want to apply 
 + We're applying good Agile principles like BDD and CI
 + We're making it quick and easy to get ideas into production
 + We're including our ops team from the beginning
+
+
+Contributing Code
+-----------------
+
+Chitter follows the [Fork & Pull](https://help.github.com/articles/using-pull-requests) model 
+for collaborative development.
