@@ -1,5 +1,26 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype 5
+html
+  head
+    title Chitter
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  
+    section#login.left.pane
+      [Login]
+      div
+        a(href='#cheeps') Cheeps &gt; 
+      
+    section#cheeps.middle.pane
+      [Cheeps]
+      div
+        a(href='#login') &lt; Login
+        a(href='#cheep') Cheep &gt;
+      
+    section#cheep.right.pane
+      [Cheep]
+      div
+        a(href='#cheeps') &lt; Cheeps
+      
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js')
+    script(src='/javascripts/app.js')
