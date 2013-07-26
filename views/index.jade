@@ -2,13 +2,13 @@ doctype 5
 html
   head
     title Chitter
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
   
     section#login.left.pane
-      [Login]
-      div
-        a(href='#cheeps') Cheeps &gt; 
+      include login
       
     section#cheeps.middle.pane
       [Cheeps]
