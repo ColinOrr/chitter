@@ -1,0 +1,27 @@
+div.header.pane-row
+  a.btn.btn-default(href='#login')
+    span.glyphicon.glyphicon-chevron-left
+    |  Back
+  
+div.body.pane-row.scroll-y
+
+  - for (var i = 0; i < 3; i++) {
+    a.unstyled(href='#cheep')
+      article.media
+        div.pull-left(href='#')
+          img.media-object.img-rounded(data-src='holder.js/64x64')
+        div.media-body
+          h1.media-heading.small Dilbert
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
+          | quis dolor eu nisl egestas scelerisque nec nec nunc. Sed porta 
+          | tempor orci in mattis. Nunc ut augue nibh. Praesent pulvinar ut 
+          | elit eget ornare. Duis congue lectus ut mi sollicitudin, non 
+          | gravida arcu pharetra.
+    hr
+  - }
+      
+div.footer.pane-row
+  div.input-group
+    input.form-control(type='text', placeholder="What's on your mind?")
+    span.input-group-btn
+      button.btn.btn-default Go

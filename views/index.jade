@@ -1,26 +1,22 @@
 doctype 5
 html
   head
-    title Chitter
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css')
-    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css')
+    title chitter
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
   
-    section#login.left.pane
+    section#login.selected.left.pane
       include login
       
     section#cheeps.middle.pane
-      [Cheeps]
-      div
-        a(href='#login') &lt; Login
-        a(href='#cheep') Cheep &gt;
+      include cheeps
       
     section#cheep.right.pane
-      [Cheep]
-      div
-        a(href='#cheeps') &lt; Cheeps
+      include cheep
       
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js')
+    script(src='http://imsky.github.io/holder/holder.js')
     script(src='/javascripts/app.js')

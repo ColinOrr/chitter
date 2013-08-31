@@ -1,9 +1,11 @@
-div.dialog
-  h1
+form.center
+      
+  h1.branding
     | chitter
-    img(src='images/teeth.png', class='medium')
-    
-  input(type='text', placeholder='Enter a Nickname')
+    img(src='images/teeth.png', style='width:50px')
   
-  div.actions
-    a(href='#cheeps', class='btn') Join In
+  div.form-group
+    label.sr-only(for='nickname')
+    input#nickname.form-control(type='text', placeholder='Enter a Nickname')
+  
+  a.btn.btn-default.pull-right(href='#cheeps') Join In

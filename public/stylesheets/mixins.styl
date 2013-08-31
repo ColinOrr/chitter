@@ -3,15 +3,6 @@ transition()
   -moz-transition arguments
   -o-transition arguments
   transition arguments
-  
-clearfix()
-  zoom 1
-  &:after
-  &:before
-    content ""
-    display table
-  &:after
-    clear both
     
 center(width, height)
   position absolute
@@ -22,3 +13,8 @@ center(width, height)
   margin auto
   max-width width
   max-height height
+  
+radial-background(shape, colourA, colourB)
+  background ((colourA/2) + (colourB/2))
+  background -webkit-radial-gradient(shape, colourA, colourB)
+  background radial-gradient(shape, colourA, colourB)
