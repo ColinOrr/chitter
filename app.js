@@ -28,6 +28,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/cheeps', routes.getCheeps);
+app.get('/cheeps/:id', routes.getCheep);
+app.post('/cheeps', routes.postCheep);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
