@@ -25,14 +25,17 @@ body
 .middle.pane
   left -100%
   
-.selected.pane + .middle.pane
+.active.pane + .middle.pane
   left 100%
 
 .right.pane
   left 100%
   
-.selected.pane
+.active.pane
   left 0
+
+.inactive.pane
+  display none
   
 //
 // Rows
