@@ -7,16 +7,14 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
   
-    section#login.left.pane.active
+    section.left.pane.active(data-bind='css: { active: login.active, inactive: login.inactive }')
       include login
       
-    section#cheeps.middle.pane.inactive
+    section.middle.pane.inactive(data-bind='css: { active: cheeps.active, inactive: cheeps.inactive }')
       include cheeps
       
-    section#cheep.right.pane.inactive
+    section.right.pane.inactive(data-bind='css: { active: cheep.active, inactive: cheep.inactive }')
       include cheep
       
-    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
-    script(src='//cdnjs.cloudflare.com/ajax/libs/sammy.js/0.7.4/sammy.min.js')
     script(src='http://imsky.github.io/holder/holder.js')
-    script(src='/javascripts/app.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js', data-main='/javascripts/app')
