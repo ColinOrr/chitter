@@ -53,5 +53,6 @@ exports.postCheep = function(req, res) {
   var cheep = req.body;
   cheeps.splice(0, 0, cheep);
   cheep.id = cheeps.length;
+  cheep.posted = new Date();
   res.send(cheep.id);
 };

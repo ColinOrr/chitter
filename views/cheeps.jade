@@ -14,8 +14,9 @@ div.body.pane-row.scroll-y(data-bind='foreach: cheeps')
           span(data-bind='text: body')
     hr
       
-div.footer.pane-row
+form.footer.pane-row
+  label.sr-only(for='status') Status
   div.input-group
-    input.form-control(type='text', placeholder="What's on your mind?")
+    input#status.form-control(type='text', placeholder="What's on your mind?", data-bind='value: status')
     span.input-group-btn
-      button.btn.btn-default Go
+      button.btn.btn-default(data-bind='click: post') Go
