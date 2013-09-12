@@ -40,12 +40,12 @@ exports.getCheeps = function(req, res) {
 };
 
 exports.getCheep = function(req, res) {
-  var id = req.params.id + 1;
-  if(id < 1 || id > cheeps.length) {
+  var index = cheeps.length - req.params.id;
+  if(index < 0 || index >= cheeps.length) {
     res.status(404).send('Sorry, cheep not found :-(')
   }
   else {
-    res.send(cheeps[req.params.id + 1]);
+    res.send(cheeps[index]);
   }
 };
 

@@ -1,6 +1,6 @@
 define(['knockout', 'dataSource'], function(ko, dataSource) {
   
-  //  Presentation logic for the login pane
+  //  Presentation logic for /views/login.jade
   
   return function loginViewModel() {
     var self = this;

@@ -5,17 +5,12 @@ div.header.pane-row
   
 div.body.pane-row.scroll-y
 
-  article
+  article(data-bind='with: cheep')
     div.media
       div.pull-left
         img.media-object.img-rounded(data-src='holder.js/64x64')
       div.media-body
-        h1.media-heading.small Dilbert
-        small Monday at 14:25
+        h1.media-heading.small(data-bind='text: author')
+        small(data-bind='text: posted')
     hr
-    div  
-    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec 
-    | quis dolor eu nisl egestas scelerisque nec nec nunc. Sed porta 
-    | tempor orci in mattis. Nunc ut augue nibh. Praesent pulvinar ut 
-    | elit eget ornare. Duis congue lectus ut mi sollicitudin, non 
-    | gravida arcu pharetra.
+    div(data-bind='text: body')

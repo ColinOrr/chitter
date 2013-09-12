@@ -25,8 +25,9 @@ define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewMode
        activate(self.cheeps); 
     });
     
-    routes.get('#cheeps/:id', function() {
-       activate(self.cheep); 
+    routes.get('#cheeps/:id', function(cxt) {
+       self.cheep.display(cxt.params.id);
+       activate(self.cheep);
     });
     
     //

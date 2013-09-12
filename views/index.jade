@@ -7,14 +7,20 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
   
-    section.left.pane.active(data-bind='css: { active: login.active, inactive: login.inactive }')
+    <!-- ko with: login -->
+    section.left.pane.active(data-bind='css: { active: active, inactive: inactive }')
       include login
+    <!-- /ko -->
       
-    section.middle.pane.inactive(data-bind='css: { active: cheeps.active, inactive: cheeps.inactive }')
+    <!-- ko with: cheeps -->
+    section.middle.pane.inactive(data-bind='css: { active: active, inactive: inactive }')
       include cheeps
+    <!-- /ko -->
       
-    section.right.pane.inactive(data-bind='css: { active: cheep.active, inactive: cheep.inactive }')
+    <!-- ko with: cheep -->
+    section.right.pane.inactive(data-bind='css: { active: active, inactive: inactive }')
       include cheep
+    <!-- /ko -->
       
     script(src='http://imsky.github.io/holder/holder.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js', data-main='/javascripts/app')

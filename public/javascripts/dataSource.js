@@ -21,6 +21,5 @@ define(['jquery', 'knockout'], function($, ko) {
     postCheep: function(cheep) {
       $.post('/cheeps', cheep);
     }
-    
   };
 });

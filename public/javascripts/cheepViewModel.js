@@ -1,6 +1,24 @@
-define(['knockout'], function(ko) {
+define(['knockout', 'dataSource'], function(ko, dataSource) {
+  
+  //  Presentation logic for /views/cheep.jade
+  
   return function cheepViewModel() {
-    this.active = ko.observable(false);
-    this.inactive = ko.observable(true);
+    var self = this;
+    
+    //
+    //  Data
+    
+    self.active = ko.observable(false);
+    self.inactive = ko.observable(true);
+    self.cheep = ko.observable();
+    
+    //
+    //  Functions
+    
+    self.display = function (id) {
+      dataSource
+        .getCheep(id)
+        .done(function(data) { self.cheep(data); });
+    };
   };
 });
