@@ -33,6 +33,9 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
     //  Initialise
     
     dataSource
+      .onCheep(function(data) { self.cheeps.unshift(data); });
+    
+    dataSource
       .getCheeps()
       .done(function(data) { self.cheeps(data); });
   };

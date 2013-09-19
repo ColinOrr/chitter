@@ -4,11 +4,11 @@
  */
 
 var express = require('express')
+  , app = express()
+  , server = require('http').createServer(app)
+  , io = require('socket.io').listen(server)
   , routes = require('./routes')
-  , http = require('http')
   , path = require('path');
-
-var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -30,8 +30,8 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/cheeps', routes.getCheeps);
 app.get('/cheeps/:id', routes.getCheep);
-app.post('/cheeps', routes.postCheep);
+app.post('/cheeps', routes.postCheep(io));
 
-http.createServer(app).listen(app.get('port'), function(){
+server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

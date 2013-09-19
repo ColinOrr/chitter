@@ -1,6 +1,8 @@
-define(['jquery', 'knockout'], function($, ko) {
+define(['jquery', 'socketio', 'knockout'], function($, io, ko) {
 
   //  Sources data from RESTful services, web sockets and local storage 
+  
+  var socket = io.connect('/');
   
   return {
     
@@ -20,6 +22,11 @@ define(['jquery', 'knockout'], function($, ko) {
     //  Posts a cheep to the server
     postCheep: function(cheep) {
       $.post('/cheeps', cheep);
+    },
+    
+    //  Callback when a cheep is sent
+    onCheep: function(callback) {
+      socket.on('cheep', callback);
     }
   };
 });

@@ -42,17 +42,20 @@ exports.getCheeps = function(req, res) {
 exports.getCheep = function(req, res) {
   var index = cheeps.length - req.params.id;
   if(index < 0 || index >= cheeps.length) {
-    res.status(404).send('Sorry, cheep not found :-(')
+    res.status(404).send('Sorry, cheep not found :-(');
   }
   else {
     res.send(cheeps[index]);
   }
 };
 
-exports.postCheep = function(req, res) {
-  var cheep = req.body;
-  cheeps.splice(0, 0, cheep);
-  cheep.id = cheeps.length;
-  cheep.posted = new Date();
-  res.send(cheep.id);
+exports.postCheep = function(io) {
+  return function(req, res) {
+    var cheep = req.body;
+    cheeps.splice(0, 0, cheep);
+    cheep.id = cheeps.length;
+    cheep.posted = new Date();
+    io.sockets.emit('cheep', cheep);
+    res.send(cheep.id);
+  };
 };
