@@ -1,4 +1,4 @@
-form.center
+form.center3
       
   h1.branding
     | chitter
@@ -8,4 +8,4 @@ form.center
     label.sr-only(for='nickname') Nickname
     input#nickname.form-control(type='text', placeholder='Enter a Nickname', data-bind="value: nickname, valueUpdate: 'afterkeydown'")
   
-  button.btn.btn-default.pull-right(disabled, data-bind='enable: canLogin, click: login') Join In
+  button.btn.btn-default.pull-right(data-bind='enable: canLogin, click: login') Join In
