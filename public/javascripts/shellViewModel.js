@@ -1,4 +1,4 @@
-define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewModel'], function(ko, sammy, loginViewModel, cheepsViewModel, cheepViewModel) {
+define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewModel', 'dataSource'], function(ko, sammy, loginViewModel, cheepsViewModel, cheepViewModel, dataSource) {
 
   //  Controls the visible panes and the navigation between them
   
@@ -22,19 +22,25 @@ define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewMode
     });
     
     routes.get('#cheeps', function() {
-       activate(self.cheeps); 
+      if(!dataSource.nicknameExists()) window.location = '#login';
+      else activate(self.cheeps);
     });
     
     routes.get('#cheeps/:id', function(cxt) {
-       self.cheep.display(cxt.params.id);
-       activate(self.cheep);
+      if(!dataSource.nicknameExists()) window.location = '#login';
+      else
+      {
+        self.cheep.display(cxt.params.id);
+        activate(self.cheep);
+      }
     });
     
     //
     //  Initialise
     
     ko.applyBindings(self);
-    routes.run('#login');
+    if(dataSource.nicknameExists()) routes.run('#login');
+    else routes.run('#cheeps');
     
     //
     //  Helpers

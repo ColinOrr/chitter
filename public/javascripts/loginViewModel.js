@@ -15,9 +15,7 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
     //
     //  Operations
     
-    self.canLogin = ko.computed(function() {
-      return (/\S/).test(self.nickname() || ''); 
-    });
+    self.canLogin = dataSource.nicknameExists;
     
     self.login = function() {
       if(!self.canLogin()) return;

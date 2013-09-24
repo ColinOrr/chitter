@@ -17,7 +17,7 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
     //  Functions
     
     self.canPost = ko.computed(function() {
-      return (/\S/).test(self.status() || ''); 
+      return (/\S/).test(self.status() || '') && dataSource.nicknameExists(); 
     });
     
     self.post = function() {
