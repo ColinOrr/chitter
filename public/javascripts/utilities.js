@@ -7,7 +7,7 @@ define(function() {
       for(var i = 0; i < name.length; i++) {
         hash += name.charCodeAt(i);
       }
-      return 'muppet-' + (hash % 16);
+      return 'muppet-' + (hash % 16 + 1);
     }
   
   };
