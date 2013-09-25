@@ -8,8 +8,8 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
     //
     //  Data
     
-    self.active = ko.observable(false);
-    self.inactive = ko.observable(true);
+    self.active = ko.observable(true);
+    self.inactive = ko.observable(false);
     self.nickname = dataSource.nickname;
     
     //

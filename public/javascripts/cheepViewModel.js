@@ -1,4 +1,4 @@
-define(['knockout', 'dataSource'], function(ko, dataSource) {
+define(['knockout', 'dataSource', 'utilities'], function(ko, dataSource, util) {
   
   //  Presentation logic for /views/cheep.jade
   
@@ -15,10 +15,15 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
     //
     //  Functions
     
+    //  Retrieves and displays an individual cheep
     self.display = function (id) {
       dataSource
         .getCheep(id)
         .done(function(data) { self.cheep(data); });
     };
+    
+    //  Converts a name into a muppet
+    self.muppetMe = util.muppetMe;
+    
   };
 });

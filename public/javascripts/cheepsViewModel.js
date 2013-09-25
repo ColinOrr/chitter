@@ -1,4 +1,4 @@
-define(['knockout', 'dataSource'], function(ko, dataSource) {
+define(['knockout', 'dataSource', 'utilities'], function(ko, dataSource, util) {
   
   //  Presentation logic for /views/cheeps.jade
   
@@ -16,10 +16,12 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
     //
     //  Functions
     
+    //  Checks whether a cheep can be posted
     self.canPost = ko.computed(function() {
       return (/\S/).test(self.status() || '') && dataSource.nicknameExists(); 
     });
     
+    //  Posts a cheep
     self.post = function() {
       if(!self.canPost()) return;
       dataSource.postCheep({
@@ -28,6 +30,9 @@ define(['knockout', 'dataSource'], function(ko, dataSource) {
       });
       self.status(null);
     };
+    
+    //  Converts a name into a muppet
+    self.muppetMe = util.muppetMe;
     
     //
     //  Initialise

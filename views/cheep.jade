@@ -8,7 +8,7 @@ div.body.pane-row.scroll-y
   article(data-bind='with: cheep')
     div.media
       div.pull-left
-        img.media-object.img-rounded(data-src='holder.js/64x64')
+        img.media-object.img-rounded.muppet(data-bind="css: $parent.muppetMe(author)")
       div.media-body
         h1.media-heading.small(data-bind='text: author')
         small(data-bind='text: posted')
