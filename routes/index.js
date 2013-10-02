@@ -1,5 +1,5 @@
-var mongojs = require('mongojs');
-var db = mongojs(process.env.IP + '/test', ['cheeps']);
+var mongo = require('mongojs')
+  , db = require('../db.js');
 
 exports.index = function(req, res) {
   res.render('index');
@@ -13,7 +13,7 @@ exports.getCheeps = function(req, res) {
 };
 
 exports.getCheep = function(req, res) {
-  var id = mongojs.ObjectId(req.params.id);
+  var id = mongo.ObjectId(req.params.id);
   db.cheeps.findOne(id, function(err, data) {
     console.log(err);
     if(data === null) {
@@ -28,7 +28,7 @@ exports.getCheep = function(req, res) {
 exports.postCheep = function(io) {
   return function(req, res) {
     var cheep = req.body;
-    cheep._id = mongojs.ObjectId();
+    cheep._id = mongo.ObjectId();
     cheep.posted = new Date();
     db.cheeps.insert(cheep, function() {});
     io.sockets.emit('cheep', cheep);
