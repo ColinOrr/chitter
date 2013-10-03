@@ -1,7 +1,12 @@
 var mongojs = require('mongojs');
 
+//	Development connection string
+var connection = 'test';
+
 //  Cloud 9 connection string
-var connection = process.env.IP + '/test';
+if(process.env.IP) {
+	connection = process.env.IP + '/test';
+}
 
 //  AppFog connection string
 if(process.env.VCAP_SERVICES) {
