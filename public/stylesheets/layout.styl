@@ -6,6 +6,7 @@ body
   margin 0
   overflow hidden
   radial-background(circle, light-red, dark-red)
+  color #fff
 
 .center3
   center(250px, 150px)
@@ -18,17 +19,9 @@ body
   width 100%
   height 100%
   transition left 0.25s ease-in-out
-  
-.left.pane
   left -100%
   
-.middle.pane
-  left -100%
-  
-.active.pane + .middle.pane
-  left 100%
-
-.right.pane
+.active.pane ~ .pane
   left 100%
   
 .active.pane
@@ -57,6 +50,7 @@ header-height = footer-height = 50px
   top header-height
   bottom footer-height
   background #fff
+  color #000
   padding 10px
   
 .body.pane-row:first-child

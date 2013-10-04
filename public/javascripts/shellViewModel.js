@@ -1,4 +1,4 @@
-define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewModel', 'dataSource'], function(ko, sammy, loginViewModel, cheepsViewModel, cheepViewModel, dataSource) {
+define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewModel', 'loadingViewModel', 'dataSource'], function(ko, sammy, loginViewModel, cheepsViewModel, cheepViewModel, loadingViewModel, dataSource) {
 
   //  Controls the visible panes and the navigation between them
   
@@ -11,6 +11,7 @@ define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewMode
     self.login = new loginViewModel();
     self.cheeps = new cheepsViewModel();
     self.cheep = new cheepViewModel();
+    self.loading = new loadingViewModel();
     
     //
     //  Routes
@@ -39,8 +40,8 @@ define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewMode
     //  Initialise
     
     ko.applyBindings(self);
-    if(dataSource.nicknameExists()) routes.run('#login');
-    else routes.run('#cheeps');
+    if(dataSource.nicknameExists()) routes.run('#cheeps');
+    else routes.run('#login');
     
     //
     //  Helpers
@@ -50,6 +51,7 @@ define(['knockout', 'sammy', 'loginViewModel', 'cheepsViewModel', 'cheepViewMode
       if (self.login.active()) return self.login;
       if (self.cheeps.active()) return self.cheeps;
       if (self.cheep.active()) return self.cheep;
+      if (self.loading.active()) return self.loading;
       return null;
     }
     

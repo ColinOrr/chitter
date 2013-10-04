@@ -8,18 +8,23 @@ html
   body
   
     <!-- ko with: login -->
-    section.left.pane.active(data-bind='css: { active: active, inactive: inactive }')
+    section.inactive.pane(data-bind='css: { active: active, inactive: inactive }')
       include login
     <!-- /ko -->
       
     <!-- ko with: cheeps -->
-    section.middle.pane.inactive(data-bind='css: { active: active, inactive: inactive }')
+    section.inactive.pane(data-bind='css: { active: active, inactive: inactive }')
       include cheeps
     <!-- /ko -->
       
     <!-- ko with: cheep -->
-    section.right.pane.inactive(data-bind='css: { active: active, inactive: inactive }')
+    section.inactive.pane(data-bind='css: { active: active, inactive: inactive }')
       include cheep
+    <!-- /ko -->
+
+    <!-- ko with: loading -->
+    section.active.pane(data-bind='css: { active: active, inactive: inactive }')
+      include loading
     <!-- /ko -->
     
     script(src='//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js', data-main='/javascripts/app')
