@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu)
+
+slide-width   = 970px
+slide-height  = 700px
+
+//
+//  Mixins
+
+center(width, height)
+  position relative
+  left (slide-width / 2) - (width / 2)
+  top (slide-height / 2) - (height / 2)
+  max-width width
+  max-height height
+
+//
+//  Layout
+
+.slide
+  width slide-width
+  min-height slide-height
+  
+//
+//  Typography
+
+logo-height = 150px
+logo-width  = 670px
+
+h1.logo
+  font-family 'Ubuntu', sans-serif
+  font-size logo-height
+  line-height logo-height
+  margin 0
+  center(logo-width, logo-height + 20)
+  img
+    height logo-height
+
+//
+//  Fall-back styling
+
+.impress-not-supported
+  background #eee
+  .slide
+    margin 20px auto
+    background #fff
+    border 1px solid #ccc
+    box-shadow 0 0 10px #ccc

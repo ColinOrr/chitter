@@ -8,6 +8,7 @@ var express = require('express')
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server)
   , routes = require('./routes')
+  , decks = require('./routes/decks')
   , path = require('path');
 
 // all environments
@@ -31,6 +32,9 @@ app.get('/', routes.index);
 app.get('/cheeps', routes.getCheeps);
 app.get('/cheeps/:id', routes.getCheep);
 app.post('/cheeps', routes.postCheep(io));
+
+// decks
+app.get('/decks/design', decks.design);
 
 server.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
