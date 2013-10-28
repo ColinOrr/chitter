@@ -30,6 +30,12 @@ tile-color(color)
   else
     color #000
 
+transition()
+  -webkit-transition arguments
+  -moz-transition arguments
+  -o-transition arguments
+  transition arguments
+
 //
 //  Layout
 
@@ -38,6 +44,9 @@ tile-color(color)
   width slide-width
   max-width none !important
   min-height slide-height
+
+.ghost.step
+  display none
   
 .code
   .tile
@@ -191,7 +200,25 @@ tile-color(color)
     center(650px, 400px)
   ul
     margin-top 40px
+
+//
+//  Impress styling
+
+.impress-enabled
+  .step
+    opacity 0.3
+    transition opacity 1s
+  .step.active
+    opacity 1
+
+.impress-on-server, .impress-on-client
+  #architecture.step
+    opacity 1
     
+.impress-on-overview
+  #chitter.step
+    opacity 1
+
 //
 //  Fall-back styling
 
@@ -202,5 +229,3 @@ tile-color(color)
     background #fff
     border 1px solid #ccc
     box-shadow 0 0 10px #ccc
-  .ghost.slide
-    display none

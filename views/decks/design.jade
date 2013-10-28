@@ -8,12 +8,12 @@ html
   body.impress-not-supported
     div#impress
     
-      section#chitter.step.slide(data-x='0', data-y='0', data-rotate='-90', data-z='-800')
+      section#chitter.step.slide(data-x='0', data-y='0', data-z='-200', data-rotate='-90', data-scale='1')
         h1
           | chitter
           img(src='../images/decks/teeth.png')
         
-      section#architecture.step.slide.container(data-x='600', data-y='0')
+      section#architecture.step.slide.container(data-x='800', data-y='0')
         div.row
           div.col-xs-3.col-sm-offset-6 
             div.tile.tile-orange
@@ -94,7 +94,7 @@ html
           div.col-xs-2 
             img.tile(src='../images/decks/cheep.jpg')
        
-      section#tech.hidden.slide
+      section#tech.step.slide(data-x='-800', data-y='0')
         
         a(href='http://knockoutjs.com', style='width: 325px; left: 40px; top: 90px')
           img.img-responsive(src='http://wakeupandcode.com/wp-content/uploads/2013/03/knockoutjs1.png', alt='Knockout')
@@ -125,7 +125,7 @@ html
         a(href='http://nodejs.org', style='width: 665px; left: 40px; bottom: 120px')
           img.img-responsive(src='../images/decks/node.png', alt='node.js')
           
-      section#node.hidden.text.slide
+      section#node.step.text.slide(data-x='-800', data-y='600', data-rotate='45', data-scale='0.9')
         div
           h1 why node.js?
           p 
@@ -137,9 +137,9 @@ html
             span.blue   ...if nothing else, <strong>node.js</strong> will become a useful addition to your toolkit 
             span.green  which will be valuable on any web project.
           
-      section.hidden.slide rest api
+      section#server.ghost.step(data-x='925', data-y='-200', data-z='-300')
       
-      section#jade.hidden.code.slide
+      section#jade.step.code.slide(data-x='680', data-y='-200', data-z='-100', data-rotate-x='-90', data-scale='0.1')
         div
           div.tile
             div.labels.pull-right
@@ -200,7 +200,7 @@ html
                 span= '  </article>\n'
                 span= '</div>'
               
-      section#stylus.hidden.code.slide
+      section#stylus.step.code.slide(data-x='680', data-y='-200', data-z='-157', data-rotate-x='-90', data-scale='0.1')
         div
           pre.left
             code.
@@ -243,7 +243,7 @@ html
               
               
               
-      section#coffeescript.hidden.code.slide
+      section#coffeescript.step.code.slide(data-x='680', data-y='-200', data-z='-170', data-rotate-x='-90', data-scale='0.1')
         div
           pre
             code.
@@ -253,7 +253,7 @@ html
               , 365 * 24 * 60 * 60 * 1000
               
               
-      section#cheeps.hidden.code.slide
+      section#cheeps.step.code.slide(data-x='925', data-y='-200', data-z='-100', data-rotate-x='-90', data-scale='0.1')
         div
           div.tile
             div.labels.pull-right
@@ -288,7 +288,7 @@ html
                 };
               };
               
-      section#cheep.hidden.code.slide
+      section#cheep.step.code.slide(data-x='1170', data-y='-200', data-z='-100', data-rotate-x='-90', data-scale='0.1')
         div
           div.tile
             div.labels.pull-right
@@ -317,9 +317,9 @@ html
                 });
               };
               
-      section.hidden.slide client
+      section#client.ghost.step(data-x='925', data-y='175', data-z='-300')
       
-      section#cheepsViewModel.hidden.code.slide
+      section#cheepsViewModel.step.code.slide(data-x='1050', data-y='100', data-z='-100', data-rotate-x='-90', data-scale='0.1')
         div.tile
           h2 Cheeps
         pre.left
@@ -377,18 +377,18 @@ html
             span= '  <button data-bind="click: post">Go</button>\n'
             span= '</form>'
       
-      section#for-the-cloud.hidden.text.slide
+      section#for-the-cloud.step.text.slide(data-x='500', data-y='700', data-rotate='-45')
         div
           h1 developed for the cloud
           
-      section#in-the-cloud.hidden.text.slide
+      section#in-the-cloud.step.text.slide(data-x='520', data-y='700', data-z='-800', data-rotate='90', data-scale='0.1')
         div
           h1 developed in the cloud*
           p 
             | *thanks to 
             a(href='http://c9.io') Cloud9 IDE
           
-      section#whats-next.hidden.text.slide
+      section#whats-next.step.text.slide(data-x='0', data-y='-700', data-rotate='-180')
         div
           h1 what's next?
           ul
@@ -398,7 +398,7 @@ html
             li.purple angular js spike
             li.blue   chitterbot tutorial
           
-      section.hidden.slide overview
+      section#overview.ghost.step(data-x='0', data-y='0', data-z='2500', data-rotate='-90')
     
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js')
