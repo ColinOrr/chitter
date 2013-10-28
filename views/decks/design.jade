@@ -8,12 +8,12 @@ html
   body.impress-not-supported
     div#impress
     
-      section#chitter.slide
+      section#chitter.step.slide(data-x='0', data-y='0', data-rotate='-90', data-z='-800')
         h1
           | chitter
           img(src='../images/decks/teeth.png')
         
-      section#architecture.slide.container
+      section#architecture.step.slide.container(data-x='600', data-y='0')
         div.row
           div.col-xs-3.col-sm-offset-6 
             div.tile.tile-orange
@@ -93,8 +93,8 @@ html
             img.tile(src='../images/decks/cheeps.jpg')
           div.col-xs-2 
             img.tile(src='../images/decks/cheep.jpg')
-          
-      section#tech.slide
+       
+      section#tech.hidden.slide
         
         a(href='http://knockoutjs.com', style='width: 325px; left: 40px; top: 90px')
           img.img-responsive(src='http://wakeupandcode.com/wp-content/uploads/2013/03/knockoutjs1.png', alt='Knockout')
@@ -125,7 +125,7 @@ html
         a(href='http://nodejs.org', style='width: 665px; left: 40px; bottom: 120px')
           img.img-responsive(src='../images/decks/node.png', alt='node.js')
           
-      section#node.text.slide
+      section#node.hidden.text.slide
         div
           h1 why node.js?
           p 
@@ -137,9 +137,9 @@ html
             span.blue   ...if nothing else, <strong>node.js</strong> will become a useful addition to your toolkit 
             span.green  which will be valuable on any web project.
           
-      section.ghost.slide rest api
+      section.hidden.slide rest api
       
-      section#jade.code.slide
+      section#jade.hidden.code.slide
         div
           div.tile
             div.labels.pull-right
@@ -200,7 +200,7 @@ html
                 span= '  </article>\n'
                 span= '</div>'
               
-      section#stylus.code.slide
+      section#stylus.hidden.code.slide
         div
           pre.left
             code.
@@ -243,7 +243,7 @@ html
               
               
               
-      section#coffeescript.code.slide
+      section#coffeescript.hidden.code.slide
         div
           pre
             code.
@@ -253,7 +253,7 @@ html
               , 365 * 24 * 60 * 60 * 1000
               
               
-      section#cheeps.code.slide
+      section#cheeps.hidden.code.slide
         div
           div.tile
             div.labels.pull-right
@@ -288,7 +288,7 @@ html
                 };
               };
               
-      section#cheep.code.slide
+      section#cheep.hidden.code.slide
         div
           div.tile
             div.labels.pull-right
@@ -317,9 +317,9 @@ html
                 });
               };
               
-      section.ghost.slide client
+      section.hidden.slide client
       
-      section#cheepsViewModel.code.slide
+      section#cheepsViewModel.hidden.code.slide
         div.tile
           h2 Cheeps
         pre.left
@@ -377,18 +377,18 @@ html
             span= '  <button data-bind="click: post">Go</button>\n'
             span= '</form>'
       
-      section#for-the-cloud.text.slide
+      section#for-the-cloud.hidden.text.slide
         div
           h1 developed for the cloud
           
-      section#in-the-cloud.text.slide
+      section#in-the-cloud.hidden.text.slide
         div
           h1 developed in the cloud*
           p 
             | *thanks to 
             a(href='http://c9.io') Cloud9 IDE
           
-      section#whats-next.text.slide
+      section#whats-next.hidden.text.slide
         div
           h1 what's next?
           ul
@@ -398,12 +398,16 @@ html
             li.purple angular js spike
             li.blue   chitterbot tutorial
           
-      section.ghost.slide overview
+      section.hidden.slide overview
     
     script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
     script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/impress.js/0.5.3/impress.min.js')
     script.
       //  Enable syntax highlighting
       $('pre code').each(function (i, e) {
           hljs.highlightBlock(e)
       });
+      
+      //  Initialise impress.js
+      impress().init();
