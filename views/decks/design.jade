@@ -4,30 +4,406 @@ html
     title chitter : Design Infodeck
     link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/decks.css')
+    link(rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/dark.min.css')
   body.impress-not-supported
     div#impress
     
       section#chitter.slide
-        h1.logo
+        h1
           | chitter
           img(src='../images/decks/teeth.png')
         
-      section.slide architecture
-      section.slide technologies
-      section.slide why node?
-      section.slide rest api
-      section.slide jade
-      section.slide stylus
-      section.slide coffee script
-      section.slide getCheeps
-      section.slide postCheep
-      section.slide getCheep
-      section.slide client
-      section.slide shell
-      section.slide login
-      section.slide cheeps
-      section.slide cheep
-      section.slide developed for the cloud
-      section.slide developed in the cloud
-      section.slide what's next?
-      section.slide overview
+      section#architecture.slide.container
+        div.row
+          div.col-xs-3.col-sm-offset-6 
+            div.tile.tile-orange
+              img(src='http://icons.iconarchive.com/icons/double-j-design/ravenna-3d/128/Database-Active-icon.png')
+              h2 Database
+        div.row
+          div.col-xs-3 
+            div.tile.tile-blue
+              h2 Web API
+          div.col-xs-3 
+            a.tile.tile-silver(href='/')
+              h2 ~/
+              div.labels
+                div.label.label-primary GET
+                div.label.label-info HTML
+                div.label.label-info CSS
+                div.label.label-info JS
+          div.col-xs-3 
+            a.tile.tile-silver(href='/cheeps')
+              h2 ~/cheeps
+              div.labels
+                div.label.label-primary GET
+                div.label.label-primary POST
+                div.label.label-info JSON
+          div.col-xs-3 
+            a.tile.tile-silver(href='/cheeps/52541b880979999e5e000009')
+              h2 ~/cheeps/:id
+              div.labels
+                div.label.label-primary GET
+                div.label.label-info JSON
+        hr
+        div.row
+          div.col-xs-3 
+            div.tile.tile-blue
+              h2 Data Layer
+          div.col-xs-6.col-sm-offset-3 
+            div.tile.tile-silver
+              h2.pull-left Data Source
+              ul.right
+                li nickname
+                li getCheeps()
+                li getCheep(id)
+                li postCheep(cheep)
+                li onCheep(callback)
+        div.row
+          div.col-xs-3 
+            div.tile.tile-blue
+              h2 View Models
+          div.col-xs-3 
+            div.tile.tile-silver
+              h2 Shell
+          div.col-xs-2 
+            div.tile.tile-silver
+              h2 Login
+              ul
+                li nickname
+                li login()
+          div.col-xs-2 
+            div.tile.tile-silver
+              h2 Cheeps
+              ul
+                li cheeps
+                li status
+                li post()
+          div.col-xs-2 
+            div.tile.tile-silver
+              h2 Cheep
+              ul
+                li cheep
+        div.row
+          div.col-xs-3 
+            div.tile.tile-blue
+              h2 Views
+          div.col-xs-2.col-sm-offset-3 
+            img.tile(src='../images/decks/login.jpg')
+          div.col-xs-2 
+            img.tile(src='../images/decks/cheeps.jpg')
+          div.col-xs-2 
+            img.tile(src='../images/decks/cheep.jpg')
+          
+      section#tech.slide
+        
+        a(href='http://knockoutjs.com', style='width: 325px; left: 40px; top: 90px')
+          img.img-responsive(src='http://wakeupandcode.com/wp-content/uploads/2013/03/knockoutjs1.png', alt='Knockout')
+        a(href='http://jquery.com', style='width: 200px; left: 380px; top: 120px')
+          img.img-responsive(src='http://babatunde.org.ng/wp-content/uploads/2013/06/JQuery_logo.jpg', alt='jQuery')
+        a(href='http://sammyjs.org', style='width: 220px; right: 150px; top: 90px; z-index: 2')
+          img.img-responsive(src='http://sammyjs.org/images/sammy-logo-header-large.png', alt='Sammy.js')
+        a(href='http://requirejs.org', style='width: 190px; right: -20px; top: 90px')
+          img.img-responsive(src='http://requirejs.org/i/logo.png', alt='RequireJS')
+        
+        
+        a(href='http://socket.io', style='width: 220px; left: 115px; top: 240px')
+          img.img-responsive(src='http://www.tonylea.com/wp-content/uploads/2012/07/socket-io.png', alt='Socket.IO')
+        a(href='http://jade-lang.com', style='width: 215px; left: 420px; top: 225px; background: #BFDEC9; padding: 5px 0;')
+          img.img-responsive(src='http://jade-lang.com/public/images/logo.png', alt='Jade')
+        a(href='http://www.w3.org/html/logo', style='width: 200px; right: 100px; top: 190px')
+          img.img-responsive(src='http://www.w3.org/html/logo/badge/html5-badge-h-connectivity-css3-semantics.png', alt='HTML5 with Realtime, Semantics and CSS3')
+        
+        a(href='http://www.mongodb.org', style='width: 320px; left: 40px; bottom: 272px')
+          img.img-responsive(src='http://upload.wikimedia.org/wikipedia/en/e/eb/MongoDB_Logo.png', alt='MongoDB')
+        a(href='http://expressjs.com', style='width: 325px; left: 395px; bottom: 260px')
+          img.img-responsive(src='https://github-camo.global.ssl.fastly.net/40504dd28b050be0e43c6ef1e2735b2caf147dd4/687474703a2f2f662e636c2e6c792f6974656d732f30563253316e304b3169337931633132326730342f53637265656e25323053686f74253230323031322d30342d31312532306174253230392e35392e3432253230414d2e706e67', alt='Express')
+        a(href='http://learnboost.github.io/stylus', style='width: 210px; right: 40px; bottom: 272px')
+          img.img-responsive(src='http://learnboost.github.io/stylus/assets/stylus.png', alt='Stylus')
+        
+        a(href='http://www.w3schools.com/js', style='width: 250px; right: 40px; bottom: 80px')
+          img.img-responsive(src='http://www.falcomgraphics.com/images/logo_javascript.png', alt='JavaScript')
+        a(href='http://nodejs.org', style='width: 665px; left: 40px; bottom: 120px')
+          img.img-responsive(src='../images/decks/node.png', alt='node.js')
+          
+      section#node.text.slide
+        div
+          h1 why node.js?
+          p 
+            span.blue   it's time to start treating JavaScript as a 1st class citizen; 
+            span.red    we need to get better at writing it, 
+            span.green  testing it with automated tests, 
+            span.purple and managing its external dependencies...
+          p
+            span.blue   ...if nothing else, <strong>node.js</strong> will become a useful addition to your toolkit 
+            span.green  which will be valuable on any web project.
+          
+      section.ghost.slide rest api
+      
+      section#jade.code.slide
+        div
+          div.tile
+            div.labels.pull-right
+              div.label.label-primary GET
+              div.label.label-info HTML
+              div.label.label-info CSS
+              div.label.label-info JS
+            h2 ~/
+          pre.left
+            code.
+              // Jade
+              
+              div.header.pane-row
+               a.btn.btn-default(href='#cheeps') 
+                 span.glyphicon.glyphicon-chevron-left
+                 |  Cheeps
+              
+              
+              div.body.pane-row.scroll-y
+               article(data-bind='with: cheep')
+                 div.media
+                   div.pull-left
+                     img.media-object.img-rounded.muppet
+                   
+                   div.media-body
+                     h1.media-heading.small(data-bind='text: author')
+                     small(data-bind='text: posted')
+                 
+                 
+                 hr
+                 div(data-bind='text: body')
+                 
+                 
+          pre.right
+            code
+              div(style='width: 200%')
+                span= '<!-- HTML -->\n'
+                span= '\n'
+                span= '<div class="header pane-row">\n'
+                span= '  <a href="#cheeps" class="btn btn-default">\n'
+                span= '    <span class="glyphicon glyphicon-chevron-left"></span>\n'
+                span= '     Cheeps\n'
+                span= '  </a>\n'
+                span= '</div>\n'
+                span= '<div class="body pane-row scroll-y">\n'
+                span= '  <article data-bind="with: cheep">\n'
+                span= '    <div class="media">\n'
+                span= '      <div class="pull-left">\n'
+                span= '        <img class="media-object img-rounded muppet">\n'
+                span= '      </div>\n'
+                span= '      <div class="media-body">\n'
+                span= '        <h1 data-bind="text: author" class="media-heading small"></h1>\n'
+                span= '        <small data-bind="text: posted"></small>\n'
+                span= '      </div>\n'
+                span= '    </div>\n'
+                span= '    <hr>\n'
+                span= '    <div data-bind="text: body"></div>\n'
+                span= '  </article>\n'
+                span= '</div>'
+              
+      section#stylus.code.slide
+        div
+          pre.left
+            code.
+              // Stylus
+              
+              light-red = #a80000
+              dark-red  = #500000
+              
+              html, body
+                width 100%
+                height 100%
+              
+              body
+                margin 0
+                overflow hidden
+                color #fff
+                radial-background(circle, light-red, dark-red)
+                
+              radial-background(shape, colourA, colourB)
+                background ((colourA/2) + (colourB/2))
+                background radial-gradient(shape, colourA, colourB)
+          pre.right
+            code.
+              /* CSS */
+              
+              
+              
+              
+              html, body {
+                width: 100%;
+                height: 100%;
+              }
+              body {
+                margin: 0;
+                overflow: hidden;
+                color: #fff;
+                background: #7c0000;
+                background: radial-gradient(circle, #a80000, #500000);
+              }
+              
+              
+              
+      section#coffeescript.code.slide
+        div
+          pre
+            code.
+              # How about CoffeeScript?
+              
+              setTimeout (-> console.log 'Maybe Later!')
+              , 365 * 24 * 60 * 60 * 1000
+              
+              
+      section#cheeps.code.slide
+        div
+          div.tile
+            div.labels.pull-right
+              div.label.label-primary GET
+              div.label.label-primary POST
+              div.label.label-info JSON
+            h2 ~/cheeps
+          pre
+            code.
+              // app.js
+              
+              app.get('/cheeps', routes.getCheeps);
+              app.post('/cheeps', routes.postCheep(io));
+              
+              // routes/index.js
+              
+              exports.getCheeps = function(req, res) {
+                db.cheeps.find().sort({posted : -1}, function(err, data) {
+                  console.log(err);
+                  res.send(data);
+                });
+              };
+              
+              exports.postCheep = function(io) {
+                return function(req, res) {
+                  var cheep = req.body;
+                  cheep._id = mongo.ObjectId();
+                  cheep.posted = new Date();
+                  db.cheeps.insert(cheep, function() {});
+                  io.sockets.emit('cheep', cheep);
+                  res.send(cheep._id);
+                };
+              };
+              
+      section#cheep.code.slide
+        div
+          div.tile
+            div.labels.pull-right
+              div.label.label-primary GET
+              div.label.label-primary POST
+              div.label.label-info JSON
+            h2 ~/cheeps/:id
+          pre
+            code.
+              // app.js
+              
+              app.get('/cheeps/:id', routes.getCheep);
+              
+              // routes/index.js
+              
+              exports.getCheep = function(req, res) {
+                var id = mongo.ObjectId(req.params.id);
+                db.cheeps.findOne(id, function(err, data) {
+                  console.log(err);
+                  if(data === null) {
+                    res.status(404).send('Sorry, cheep not found :-(');
+                  }
+                  else {
+                    res.send(data);
+                  }
+                });
+              };
+              
+      section.ghost.slide client
+      
+      section#cheepsViewModel.code.slide
+        div.tile
+          h2 Cheeps
+        pre.left
+          code.
+            // public/javascripts/cheepsViewModel.js
+            
+            return function cheepsViewModel() {
+              var self = this;
+              
+              self.cheeps = ko.observableArray();
+              self.status = ko.observable();
+              
+              self.post = function() {
+                dataSource.postCheep({
+                  author: dataSource.nickname(),
+                  body: self.status()
+                });
+                self.status(null);
+              };
+              
+              dataSource
+                .getCheeps()
+                .done(function(data) { self.cheeps(data); });
+                
+              dataSource
+                .onCheep(function(data) { self.cheeps.unshift(data); });
+            };
+            
+            
+        pre.right
+          code
+            span= '<!-- views/cheeps.jade -->\n'
+            span= '\n'
+            span= '<div data-bind="foreach: cheeps">\n'
+            span= '  <a data-bind="attr: { href: \'#cheeps/\' + _id }"\n'
+            span= '     href="#cheeps/5264e0970940cb1c3b000001">\n'
+            span= '    <article>\n'
+            span= '      <div class="pull-left">\n'
+            span= '        <img class="media-object muppet">\n'
+            span= '      </div>\n'
+            span= '      <div class="media-body">\n'
+            span= '        <h1 data-bind="text: author">Colin Orr</h1>\n'
+            span= '        <span data-bind="text: body">\n'
+            span= '          Interesting, VS2013 has intellisense...\n'
+            span= '        </span>\n'
+            span= '      </div>\n'
+            span= '    </article>\n'
+            span= '  </a>\n'
+            span= '  ...\n'
+            span= '</div>\n'
+            span= '\n'
+            span= '<form class="footer">\n'
+            span= '  <input id="status" type="text"\n'
+            span= '         data-bind="value: status">\n'
+            span= '  <button data-bind="click: post">Go</button>\n'
+            span= '</form>'
+      
+      section#for-the-cloud.text.slide
+        div
+          h1 developed for the cloud
+          
+      section#in-the-cloud.text.slide
+        div
+          h1 developed in the cloud*
+          p 
+            | *thanks to 
+            a(href='http://c9.io') Cloud9 IDE
+          
+      section#whats-next.text.slide
+        div
+          h1 what's next?
+          ul
+            li.blue   tablet/desktop version
+            li.red    continuous delivery
+            li.green  mongoose schema
+            li.purple angular js spike
+            li.blue   chitterbot tutorial
+          
+      section.ghost.slide overview
+    
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/highlight.min.js')
+    script.
+      //  Enable syntax highlighting
+      $('pre code').each(function (i, e) {
+          hljs.highlightBlock(e)
+      });
