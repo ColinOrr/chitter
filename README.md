@@ -7,6 +7,32 @@ We're starting this project with a single README file and inviting collaborators
 the requirements and architecture as well as developing the application.
 
 
+Getting Started
+---------------
+You'll need the following prerequisites to develop Chitter:
+
++ [Git](http://git-scm.com/downloads)
++ [node.js](http://nodejs.org/download)
++ [MongoDB](http://www.mongodb.org/downloads)
+
+Then run the following commands:
+
+```bash
+# Download the code
+git clone https://github.com/ColinOrr-Asidua/chitter.git
+cd chitter
+
+# Download the dependencies
+npm install
+
+# Start the database & application
+mongod      # if on Cloud9, run ./mongod instead
+node app.js
+```
+    
+All being well, you should be able to visit the application on [localhost:3000](http://localhost:3000)
+
+
 Project Principles
 ------------------
 When deciding on our list of requirements and our architecture we want to apply the following principles:
