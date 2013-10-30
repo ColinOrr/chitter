@@ -1,0 +1,30 @@
+doctype 5
+html
+  head
+    title chitter
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+  
+    <!-- ko with: login -->
+    section.inactive.pane(data-bind='css: { active: active, inactive: inactive }')
+      include login
+    <!-- /ko -->
+      
+    <!-- ko with: cheeps -->
+    section.inactive.pane(data-bind='css: { active: active, inactive: inactive }')
+      include cheeps
+    <!-- /ko -->
+      
+    <!-- ko with: cheep -->
+    section.inactive.pane(data-bind='css: { active: active, inactive: inactive }')
+      include cheep
+    <!-- /ko -->
+
+    <!-- ko with: loading -->
+    section.active.pane(data-bind='css: { active: active, inactive: inactive }')
+      include loading
+    <!-- /ko -->
+    
+    script(src='//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js', data-main='/javascripts/app')
