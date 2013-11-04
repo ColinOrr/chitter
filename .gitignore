@@ -1,5 +1,5 @@
 .c9revisions/
 node_modules/
-public/stylesheets/*.css
+client/stylesheets/*.css
 data/
 .DS_Store

@@ -13,15 +13,15 @@ var express = require('express')
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
+app.set('views', __dirname + '/../client/views');
 app.set('view engine', 'jade');
-app.use(express.favicon(__dirname + '/public/images/teeth.png'));
+app.use(express.favicon(__dirname + '/../client/images/teeth.png'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(require('stylus').middleware(__dirname + '/public'));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(require('stylus').middleware(__dirname + '/../client'));
+app.use(express.static(path.join(__dirname, '/../client')));
 
 // development only
 if ('development' == app.get('env')) {

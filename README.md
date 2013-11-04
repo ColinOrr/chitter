@@ -27,7 +27,7 @@ npm install
 
 # Start the database & application
 mongod      # if on Cloud9, run ./mongod instead
-node app.js
+node server.js
 ```
     
 All being well, you should be able to visit the application on [localhost:3000](http://localhost:3000)
