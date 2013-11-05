@@ -16,4 +16,9 @@ if(process.env.VCAP_SERVICES) {
   connection = "mongodb://" + cfg.username + ":" + cfg.password + "@" + cfg.hostname + ":" + cfg.port +"/" + cfg.db;
 }
 
+//	Azure MongoLab connection string
+if(process.env.CUSTOMCONNSTR_MONGOLAB) {
+  connection = process.env.CUSTOMCONNSTR_MONGOLAB;
+}
+
 module.exports = mongojs(connection, ['cheeps']);
