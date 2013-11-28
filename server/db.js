@@ -5,7 +5,7 @@ var connection = 'test';
 
 //  Cloud 9 connection string
 if(process.env.IP) {
-	connection = process.env.IP + '/test';
+  connection = process.env.IP + '/test';
 }
 
 //  AppFog connection string
@@ -16,9 +16,14 @@ if(process.env.VCAP_SERVICES) {
   connection = "mongodb://" + cfg.username + ":" + cfg.password + "@" + cfg.hostname + ":" + cfg.port +"/" + cfg.db;
 }
 
-//	Azure MongoLab connection string
+//  Azure MongoLab connection string
 if(process.env.CUSTOMCONNSTR_MONGOLAB) {
   connection = process.env.CUSTOMCONNSTR_MONGOLAB;
+}
+
+//  Dokku
+if(process.env.MONGO_URL) {
+  connection = process.env.MONGO_URL;
 }
 
 module.exports = mongojs(connection, ['cheeps']);
