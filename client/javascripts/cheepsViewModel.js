@@ -42,6 +42,6 @@ define(['knockout', 'dataSource', 'utilities'], function(ko, dataSource, util) {
     
     dataSource
       .getCheeps()
-      .done(function(data) { self.cheeps(data); });
+      .done(function(data) { self.cheeps(data || []); });
   };
 });
