@@ -12,7 +12,7 @@ var express = require('express')
   , path = require('path');
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/../client/views');
 app.set('view engine', 'jade');
 app.use(express.favicon(__dirname + '/../client/images/teeth.png'));

@@ -3,7 +3,7 @@ chitter
 
 Chitter allows developers to share useful information quickly and informally using a social, micro-blogging approach.
 
-We're starting this project with a single README file and inviting collaborators to define 
+We're starting this project with a single README file and inviting collaborators to define
 the requirements and architecture as well as developing the application.
 
 
@@ -29,7 +29,7 @@ npm install
 mongod      # if on Cloud9, run ./mongod instead
 node server.js
 ```
-    
+
 All being well, you should be able to visit the application on [localhost:3000](http://localhost:3000)
 
 
@@ -63,5 +63,22 @@ When making architecture, design and technology decisions, developers should kee
 Contributing Code
 -----------------
 
-Chitter follows the [Fork & Pull](https://help.github.com/articles/using-pull-requests) model 
+Chitter follows the [Fork & Pull](https://help.github.com/articles/using-pull-requests) model
 for collaborative development.
+
+Docker Compose
+--------------
+
+Development mode:
+
+```bash
+$ dc-run chitter_web
+$ npm start
+```
+
+Deploy to Digital Ocean:
+
+```bash
+$ eval $(docker-machine env digitalocean)
+$ dc -f docker-compose.prod.yml up --build -d
+```

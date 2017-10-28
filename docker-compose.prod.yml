@@ -1,0 +1,13 @@
+version: '2'
+services:
+  chitter_db:
+    image: mongo:3.4
+  chitter_web:
+    build: .
+    working_dir: /code
+    command: npm start
+    restart: always
+    depends_on:
+      - chitter_db
+    expose:
+      - 80

@@ -1,0 +1,14 @@
+version: '2'
+services:
+  chitter_db:
+    image: mongo:3.4
+  chitter_web:
+    image: node:8.8
+    working_dir: /code
+    command: bash
+    volumes:
+      - .:/code
+    depends_on:
+      - chitter_db
+    ports:
+      - 80:80
